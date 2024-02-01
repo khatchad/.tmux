@@ -53,6 +53,8 @@ tmux_conf_new_pane_reconnect_ssh=false
 # see https://github.com/termstandard/colors
 tmux_conf_24b_colour=auto
 
+set -g base-index 0           # start windows numbering at 0
+
 
 # -- theming -------------------------------------------------------------------
 
