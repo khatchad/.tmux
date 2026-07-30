@@ -414,6 +414,14 @@ set -g mode-keys vi
 # reload config file (change file location to your the tmux.conf you want to use)
 bind r source-file ~/.tmux.conf
 
+# search the scrollback without entering copy mode first
+# /!\ this overrides the default `prefix /` binding, which is describe-key
+bind / copy-mode \; command-prompt -T search -p "(search down)" { send -X search-forward "%%" }  #!important
+bind C-/ copy-mode \; command-prompt -T search -p "(search up)" { send -X search-backward "%%" } #!important
+
+# uncomment to keep describe-key around on another key
+#bind M-/ command-prompt -k -p key { list-keys -1N "%%" } #!important
+
 
 # -- tpm -----------------------------------------------------------------------
 
