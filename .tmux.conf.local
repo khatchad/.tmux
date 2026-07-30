@@ -418,6 +418,8 @@ bind r source-file ~/.tmux.conf
 # /!\ this overrides the default `prefix /` binding, which is describe-key
 bind / copy-mode \; command-prompt -T search -p "(search down)" { send -X search-forward "%%" }  #!important
 bind C-/ copy-mode \; command-prompt -T search -p "(search up)" { send -X search-backward "%%" } #!important
+# some terminals send C-_ for the C-/ chord, so bind both
+bind C-_ copy-mode \; command-prompt -T search -p "(search up)" { send -X search-backward "%%" } #!important
 
 # uncomment to keep describe-key around on another key
 #bind M-/ command-prompt -k -p key { list-keys -1N "%%" } #!important
